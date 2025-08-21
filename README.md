@@ -7,7 +7,7 @@ Currently, I’m exploring the worlds of **Machine Learning**, **Cloud Computing
 🎨 **I love bringing my ideas to life** through coding and continuously seek new challenges that stretch my knowledge and skills.
 
 🔗 Check out my live portfolio and some of my projects below:  
-[**Krisztian Kovacs Sotet | Portfolio**](https://DSmithin.github.io/my-portfolio/)
+[**Krisztian Kovacs Sotet | Portfolio**](https://github.com/DSmithin/my-portfolio)
 
 ---
 
