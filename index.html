@@ -1,196 +1,372 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Krisztian Kovacs Sotet | Portfolio</title>
-  <meta name="description" content="Software Engineer portfolio of Krisztian Kovacs Sotet — projects in Python, security, data, and web applications." />
+  <title>Krisztian Kovacs Sotet — Software Engineer</title>
+  <meta name="description" content="Software Engineer specialising in IoT security, data analytics, and full-stack development." />
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="style.css" />
-  <script defer src="https://kit.fontawesome.com/a2e0c6adf4.js"></script>
+  <script defer src="https://kit.fontawesome.com/a2e0c6adf4.js" crossorigin="anonymous"></script>
   <script defer src="script.js"></script>
 </head>
 
 <body>
 
-<header class="site-header">
-  <nav class="navbar container">
-    <a class="logo" href="#hero">KKS</a>
+<!-- Reading progress bar -->
+<div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
 
-    <button class="menu-toggle">
-      <i class="fas fa-bars"></i>
+<!-- Custom cursor (desktop only, CSS hides on touch) -->
+<div class="cursor-dot"  id="cursor-dot"  aria-hidden="true"></div>
+<div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header" id="site-header">
+  <nav class="navbar container" aria-label="Primary navigation">
+    <a class="logo" href="#hero">
+      <span class="bracket">[</span>KKS<span class="bracket">]</span>
+    </a>
+
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-list">
+      <span></span><span></span><span></span>
     </button>
 
-    <ul id="nav-list" class="nav-links">
+    <ul id="nav-list" class="nav-links" role="list">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><button id="themeToggle" class="icon-btn"><i class="fas fa-moon"></i></button></li>
     </ul>
   </nav>
 </header>
 
-<main>
+<main id="main">
 
-<!-- HERO -->
-<section id="hero" class="hero">
-  <div class="container hero-grid">
-    <div class="hero-text">
-      <h1>Hi, I’m <span class="accent">Krisztian Kovacs Sotet</span></h1>
+<!-- ===== HERO ===== -->
+<section id="hero" class="hero" aria-label="Introduction">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
 
-      <p class="subtitle">
-        Software Engineer focused on secure systems, data-driven solutions, and scalable applications
+  <div class="container hero-inner">
+
+    <!-- Text -->
+    <div class="hero-content">
+      <p class="hero-eyebrow mono">&gt;&nbsp;software_engineer.py<span class="cursor-blink">|</span></p>
+
+      <h1 class="hero-name">
+        Krisztian
+        <em>Kovacs Sotet</em>
+      </h1>
+
+      <div class="hero-role" aria-label="Specialised in IoT Security, Data Analytics, Full-Stack Development">
+        <span class="role-prefix mono">specialised in&nbsp;</span>
+        <div class="role-cycler" aria-live="polite" aria-atomic="true">
+          <span class="role-item active">IoT Security</span>
+          <span class="role-item">Data Analytics</span>
+          <span class="role-item">Full-Stack Dev</span>
+        </div>
+      </div>
+
+      <p class="hero-desc">
+        Building secure systems, data-driven solutions, and scalable
+        applications — from concept to production.
       </p>
 
-      <div class="cta">
-        <a href="#projects" class="btn primary">See My Work</a>
-
-        <a href="https://github.com/DSmithin" target="_blank" class="btn ghost">
-          <i class="fab fa-github"></i> GitHub
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">
+          View My Work
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </a>
-
-        <a href="https://github.com/DSmithin/iot-security-project" target="_blank" class="btn ghost">
-          🔐 Featured Project
+        <a href="https://github.com/DSmithin" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+          <i class="fab fa-github" aria-hidden="true"></i> GitHub
         </a>
+        <a href="mailto:krisztian.kovacssotet@gmail.com" class="btn btn-ghost">
+          Let's Talk
+        </a>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <span class="mono">scroll</span>
+        <div class="scroll-line"><div class="scroll-line-fill"></div></div>
       </div>
     </div>
 
-    <div class="hero-media">
-      <img src="images/HeroPicture.jpg" class="hero-img" />
+    <!-- Floating code card -->
+    <div class="hero-deco" aria-hidden="true">
+      <div class="code-card">
+        <div class="code-card-bar">
+          <span class="code-dot dot-red"></span>
+          <span class="code-dot dot-yellow"></span>
+          <span class="code-dot dot-green"></span>
+          <span class="code-filename mono">engineer.py</span>
+        </div>
+        <pre class="code-body"><code><span class="ck">class</span> <span class="cf">Engineer</span><span class="cp">:</span>
+  <span class="ca">name</span>   <span class="cp">=</span> <span class="cs">"Krisztian"</span>
+  <span class="ca">status</span> <span class="cp">=</span> <span class="cs">"open_to_work"</span>
+
+  <span class="ca">stack</span> <span class="cp">= [</span>
+    <span class="cs">"Python"</span><span class="cp">,</span> <span class="cs">"Java"</span><span class="cp">,</span>
+    <span class="cs">"Flask"</span><span class="cp">,</span>  <span class="cs">"React"</span><span class="cp">,</span>
+    <span class="cs">"Docker"</span><span class="cp">,</span> <span class="cs">"SQL"</span><span class="cp">,</span>
+  <span class="cp">]</span>
+
+  <span class="ck">def</span> <span class="cf">build</span><span class="cp">(</span><span class="ca">self</span><span class="cp">,</span> idea<span class="cp">):</span>
+    <span class="ca">code</span> <span class="cp">=</span> <span class="cf">write_clean</span><span class="cp">(</span>idea<span class="cp">)</span>
+    <span class="ck">return</span> <span class="cf">deploy</span><span class="cp">(</span><span class="ca">code</span><span class="cp">)</span>
+
+<span class="cm">  # recent work:</span>
+<span class="cm">  # iot_security.py   ✓</span>
+<span class="cm">  # ml_dashboard.py   ✓</span>
+<span class="cm">  # inventory_app.py  ✓</span></code></pre>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== SKILLS TICKER ===== -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="mono">Python</span><span class="sep">·</span>
+    <span class="mono">IoT Security</span><span class="sep">·</span>
+    <span class="mono">Machine Learning</span><span class="sep">·</span>
+    <span class="mono">Flask</span><span class="sep">·</span>
+    <span class="mono">React</span><span class="sep">·</span>
+    <span class="mono">Docker</span><span class="sep">·</span>
+    <span class="mono">ChaCha20</span><span class="sep">·</span>
+    <span class="mono">PostgreSQL</span><span class="sep">·</span>
+    <span class="mono">MQTT</span><span class="sep">·</span>
+    <span class="mono">Java</span><span class="sep">·</span>
+    <span class="mono">C#</span><span class="sep">·</span>
+    <span class="mono">Data Analytics</span><span class="sep">·</span>
+    <span class="mono">Python</span><span class="sep">·</span>
+    <span class="mono">IoT Security</span><span class="sep">·</span>
+    <span class="mono">Machine Learning</span><span class="sep">·</span>
+    <span class="mono">Flask</span><span class="sep">·</span>
+    <span class="mono">React</span><span class="sep">·</span>
+    <span class="mono">Docker</span><span class="sep">·</span>
+    <span class="mono">ChaCha20</span><span class="sep">·</span>
+    <span class="mono">PostgreSQL</span><span class="sep">·</span>
+    <span class="mono">MQTT</span><span class="sep">·</span>
+    <span class="mono">Java</span><span class="sep">·</span>
+    <span class="mono">C#</span><span class="sep">·</span>
+    <span class="mono">Data Analytics</span><span class="sep">·</span>
+  </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-photo-col reveal">
+        <div class="photo-frame">
+          <img src="images/profile.jpeg" alt="Krisztian Kovacs Sotet" class="profile-img" />
+          <div class="photo-border" aria-hidden="true"></div>
+          <div class="photo-badge mono">
+            <span class="badge-dot" aria-hidden="true"></span>
+            Available for hire
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text-col reveal">
+        <span class="section-label mono">01 / about</span>
+        <h2>Turning ideas into<br/><em>reliable software</em></h2>
+
+        <p>
+          I'm a Software Engineering graduate with a sharp focus on building efficient,
+          reliable, and secure software. I take ideas from concept to production — writing
+          clean code, validating assumptions with data, and iterating fast.
+        </p>
+        <p>
+          My work spans <strong>IoT security</strong>, <strong>data analytics</strong>, and
+          <strong>full-stack development</strong>. Currently focused on secure system design,
+          distributed architectures, and real-world deployment.
+        </p>
+
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-num" data-target="6" data-suffix="+">0</span>
+            <span class="stat-label mono">Projects</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-target="86" data-suffix="%">0</span>
+            <span class="stat-label mono">Top Grade</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-target="12" data-suffix="+">0</span>
+            <span class="stat-label mono">Technologies</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="section">
-  <div class="container narrow">
-    <h2>About Me</h2>
-
-    <p>
-      I’m a Software Engineering graduate focused on building efficient, reliable, and secure software. 
-      I enjoy taking ideas from concept to production—writing clean code, validating assumptions with data, and iterating quickly.
-    </p>
-
-    <p>
-      My work spans <strong>IoT security</strong>, <strong>data analytics</strong>, and <strong>full-stack development</strong>.
-    </p>
-
-    <p>
-      My current focus is on secure system design, distributed architectures, and real-world deployment.
-    </p>
-
-    <img src="images/profile.jpeg" class="profile-img" />
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills" class="section alt">
+<!-- ===== SKILLS ===== -->
+<section id="skills" class="section section-alt">
   <div class="container">
-    <h2>Skills</h2>
+    <span class="section-label mono center">02 / skills</span>
+    <h2 class="center">Technical Stack</h2>
 
-    <ul class="chip-list">
-      <li>Python</li><li>Java</li><li>C#</li><li>C++</li>
-      <li>JavaScript</li><li>SQL</li><li>Flask</li>
-      <li>React</li><li>Docker</li><li>Git</li>
-      <li>MQTT</li><li>Security</li>
-    </ul>
+    <div class="skills-grid">
+      <div class="skill-group reveal">
+        <h3 class="skill-group-title mono">languages</h3>
+        <div class="skill-chips">
+          <span class="chip">Python</span>
+          <span class="chip">Java</span>
+          <span class="chip">C#</span>
+          <span class="chip">C++</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">SQL</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3 class="skill-group-title mono">frameworks &amp; tools</h3>
+        <div class="skill-chips">
+          <span class="chip chip-accent">Flask</span>
+          <span class="chip chip-accent">React</span>
+          <span class="chip chip-accent">Docker</span>
+          <span class="chip chip-accent">Git</span>
+          <span class="chip chip-accent">Power BI</span>
+          <span class="chip chip-accent">Unity</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3 class="skill-group-title mono">specialisations</h3>
+        <div class="skill-chips">
+          <span class="chip chip-lime">MQTT</span>
+          <span class="chip chip-lime">IoT Security</span>
+          <span class="chip chip-lime">ChaCha20</span>
+          <span class="chip chip-lime">HMAC</span>
+          <span class="chip chip-lime">Machine Learning</span>
+          <span class="chip chip-lime">PostgreSQL</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- ===== PROJECTS ===== -->
 <section id="projects" class="section">
   <div class="container">
-    <h2>Projects</h2>
+    <span class="section-label mono center">03 / projects</span>
+    <h2 class="center">Selected Work</h2>
 
-    <div class="grid">
+    <div class="projects-grid">
 
-      <!-- IoT Security -->
-      <article class="card reveal">
-        <img src="images/project-iot.jpg" alt="Secure IoT communication system with encryption and authentication" />
-        <div class="card-body">
+      <!-- Featured -->
+      <article class="project-card project-featured reveal">
+        <span class="ghost-num" aria-hidden="true">01</span>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-num mono">01</span>
+            <div class="project-tags">
+              <span>Python</span><span>MQTT</span><span>ChaCha20</span><span>HMAC</span>
+            </div>
+            <span class="project-badge mono">🔐 Featured</span>
+          </div>
           <h3>Efficient Methods for Securing IoT Devices</h3>
-
-          <p>
-            Implemented a secure IoT communication system using MQTT, ChaCha20 encryption, and HMAC authentication. 
-            Demonstrates real-time data protection and resistance to message tampering through live attack simulation.
-          </p>
-
-          <div class="tags">
-            <span>Python</span><span>MQTT</span><span>ChaCha20</span><span>HMAC</span>
-          </div>
-
-          <div class="card-actions">
-            <a href="https://github.com/DSmithin/iot-security-project" target="_blank" class="btn small">GitHub</a>
-            <a href="#" class="btn small ghost">Details</a>
-          </div>
+          <p>A secure IoT communication system using MQTT, ChaCha20 encryption, and HMAC authentication. Demonstrates real-time data protection and resistance to message tampering through live attack simulation.</p>
+          <a href="https://github.com/DSmithin/iot-security-project" target="_blank" rel="noopener noreferrer" class="project-link">
+            <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
+          </a>
         </div>
       </article>
 
       <!-- ML Dashboard -->
-      <article class="card reveal">
-        <img src="images/project-ml.jpg" alt="Analytics dashboard preview" />
-        <div class="card-body">
+      <article class="project-card reveal">
+        <span class="ghost-num" aria-hidden="true">02</span>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-num mono">02</span>
+            <div class="project-tags"><span>Python</span><span>ML</span><span>Power BI</span></div>
+          </div>
           <h3>ML Analytics Dashboard</h3>
-          <p>Developed a dashboard for model evaluation including feature importance, confusion matrices, and metrics.</p>
-          <div class="tags"><span>Python</span><span>ML</span><span>Power BI</span></div>
-          <div class="card-actions">
-            <a href="https://github.com/DSmithin/ml-analytics-dashboard" target="_blank" class="btn small">GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Unity -->
-      <article class="card reveal">
-        <img src="images/project-unity.jpg" alt="2D game" />
-        <div class="card-body">
-          <h3>2D Puzzle Platformer</h3>
-          <p>Physics-based game focusing on gameplay mechanics, performance optimisation, and clean architecture.</p>
-          <div class="tags"><span>Unity</span><span>C#</span></div>
-          <div class="card-actions">
-            <a href="https://github.com/DSmithin/Godot-Projects/tree/main/Godot%20Projects" target="_blank" class="btn small">GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Java -->
-      <article class="card reveal">
-        <img src="images/project-java.jpg" alt="Java game" />
-        <div class="card-body">
-          <h3>Turn-Based Strategy Game</h3>
-          <p>Designed using OOP principles with modular combat system. Achieved distinction (86%).</p>
-          <div class="tags"><span>Java</span><span>OOP</span></div>
-          <div class="card-actions">
-            <a href="https://github.com/DSmithin/CareCWK4" target="_blank" class="btn small">GitHub</a>
-          </div>
+          <p>Dashboard for model evaluation: feature importance, confusion matrices, and performance metrics visualised end-to-end.</p>
+          <a href="https://github.com/DSmithin/ml-analytics-dashboard" target="_blank" rel="noopener noreferrer" class="project-link">
+            <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
+          </a>
         </div>
       </article>
 
       <!-- Inventory -->
-      <article class="card reveal">
-        <img src="images/project-inventory.jpg" alt="Inventory app" />
-        <div class="card-body">
-          <h3>Inventory Management Web App</h3>
-          <p>Full-stack system with real-time updates, reporting, and role-based access control.</p>
-          <div class="tags"><span>Flask</span><span>React</span><span>PostgreSQL</span></div>
-          <div class="card-actions">
-            <a href="https://github.com/DSmithin/inventory-webapp" target="_blank" class="btn small">GitHub</a>
+      <article class="project-card reveal">
+        <span class="ghost-num" aria-hidden="true">03</span>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-num mono">03</span>
+            <div class="project-tags"><span>Flask</span><span>React</span><span>PostgreSQL</span></div>
           </div>
+          <h3>Inventory Management Web App</h3>
+          <p>Full-stack system with real-time updates, reporting dashboards, and role-based access control.</p>
+          <a href="https://github.com/DSmithin/inventory-webapp" target="_blank" rel="noopener noreferrer" class="project-link">
+            <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
+          </a>
+        </div>
+      </article>
+
+      <!-- Java Game -->
+      <article class="project-card reveal">
+        <span class="ghost-num" aria-hidden="true">04</span>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-num mono">04</span>
+            <div class="project-tags"><span>Java</span><span>OOP</span></div>
+          </div>
+          <h3>Turn-Based Strategy Game</h3>
+          <p>Modular combat engine built with OOP principles. Awarded distinction — 86%.</p>
+          <a href="https://github.com/DSmithin/CareCWK4" target="_blank" rel="noopener noreferrer" class="project-link">
+            <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
+          </a>
+        </div>
+      </article>
+
+      <!-- Platformer -->
+      <article class="project-card reveal">
+        <span class="ghost-num" aria-hidden="true">05</span>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-num mono">05</span>
+            <div class="project-tags"><span>Unity</span><span>C#</span><span>Godot</span></div>
+          </div>
+          <h3>2D Puzzle Platformer</h3>
+          <p>Physics-based game focused on gameplay mechanics, performance optimisation, and clean architecture.</p>
+          <a href="https://github.com/DSmithin/Godot-Projects/tree/main/Godot%20Projects" target="_blank" rel="noopener noreferrer" class="project-link">
+            <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
+          </a>
         </div>
       </article>
 
       <!-- Portfolio -->
-      <article class="card reveal">
-        <img src="images/project-portfolio.jpg" alt="Portfolio website" />
-        <div class="card-body">
-          <h3>Personal Portfolio</h3>
-          <p>Responsive, accessible portfolio with dark mode and smooth UI interactions.</p>
-          <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
-          <div class="card-actions">
-            <a href="https://github.com/DSmithin/my-portfolio" target="_blank" class="btn small">GitHub</a>
+      <article class="project-card reveal">
+        <span class="ghost-num" aria-hidden="true">06</span>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-num mono">06</span>
+            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
           </div>
+          <h3>Personal Portfolio</h3>
+          <p>Responsive, accessible portfolio with smooth scroll reveals, dark background, and polished UI interactions.</p>
+          <a href="https://github.com/DSmithin/my-portfolio" target="_blank" rel="noopener noreferrer" class="project-link">
+            <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
+          </a>
         </div>
       </article>
 
@@ -198,36 +374,91 @@
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience" class="section alt">
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience" class="section section-alt">
   <div class="container">
+    <span class="section-label mono">04 / experience</span>
     <h2>Experience</h2>
 
     <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>Store Associate — TK Maxx</h3>
-          <p class="meta">2023 – Present</p>
-          <p>
-            Delivered customer-focused solutions while improving problem-solving and operational efficiency skills. 
-            Gained insight into real-world system workflows.
-          </p>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-marker">
+          <div class="marker-dot"></div>
+          <div class="marker-line" aria-hidden="true"></div>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <h3>Store Associate</h3>
+            <span class="timeline-co mono">TK Maxx</span>
+          </div>
+          <p class="timeline-date mono">2023 — Present · Part-time</p>
+          <p>Delivered customer-focused solutions while sharpening problem-solving and operational skills. Gained insight into real-world workflows and team collaboration under pressure.</p>
+          <div class="timeline-tags">
+            <span>Communication</span><span>Problem Solving</span><span>Operations</span>
+          </div>
         </div>
       </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-marker">
+          <div class="marker-dot marker-dot-lime"></div>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <h3>Software Engineering Degree</h3>
+            <span class="timeline-co mono">University</span>
+          </div>
+          <p class="timeline-date mono">2021 — 2024 · Graduate</p>
+          <p>Focused on secure systems, data structures, algorithms, and software architecture. Achieved distinction in key modules including OOP design and systems security.</p>
+          <div class="timeline-tags">
+            <span>Software Architecture</span><span>Security</span><span>Data Structures</span><span>Algorithms</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section">
-  <div class="container narrow">
-    <h2>Contact</h2>
-    <p>Let’s build something great together.</p>
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section contact-section">
+  <div class="container">
+    <div class="contact-inner">
+      <span class="section-label mono center">05 / contact</span>
+      <h2 class="center">Let's Build Something<br/><em>Great Together</em></h2>
+      <p class="contact-desc center">
+        Open to software engineering roles, freelance projects, and collaborations.
+        Reach out — I respond quickly.
+      </p>
 
-    <div class="contact-actions">
-      <a href="mailto:krisztian.kovacssotet@gmail.com" class="btn">Email</a>
-      <a href="https://github.com/DSmithin" class="btn">GitHub</a>
+      <div class="contact-cards reveal">
+        <a href="mailto:krisztian.kovacssotet@gmail.com" class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </div>
+          <div class="contact-card-text">
+            <span class="contact-card-label mono">email</span>
+            <span class="contact-card-value">krisztian.kovacssotet@gmail.com</span>
+          </div>
+          <svg class="contact-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <a href="https://github.com/DSmithin" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <div class="contact-icon">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </div>
+          <div class="contact-card-text">
+            <span class="contact-card-label mono">github</span>
+            <span class="contact-card-value">github.com/DSmithin</span>
+          </div>
+          <svg class="contact-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -235,7 +466,12 @@
 </main>
 
 <footer class="site-footer">
-  <p>© 2026 Krisztian Kovacs Sotet</p>
+  <div class="container footer-inner">
+    <a class="logo" href="#hero" aria-label="Back to top">
+      <span class="bracket">[</span>KKS<span class="bracket">]</span>
+    </a>
+    <p class="footer-copy mono">© <span id="year"></span> Krisztian Kovacs Sotet</p>
+  </div>
 </footer>
 
 </body>
